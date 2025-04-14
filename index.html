@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODBIT SubDiv Testing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+            height: 100%;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(to bottom, #003366, #002244);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            border-bottom: 5px solid #001122;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .main-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            min-height: 600px;
+            position: relative;
+        }
+        
+        .mission-statement {
+            background-color: #f5f5f5;
+            border-left: 5px solid #003366;
+            padding: 15px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .buttons-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+            height: 450px;
+        }
+        
+        .button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #ffffff, #e9e9e9);
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #003366;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .button:not(.disabled):hover {
+            background: linear-gradient(to bottom, #e9e9e9, #d9d9d9);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .button:not(.disabled):active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .button.disabled {
+            background: linear-gradient(to bottom, #e0e0e0, #d0d0d0);
+            color: #999;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
+        .button-icon {
+            margin-bottom: 15px;
+            font-size: 40px;
+        }
+        
+        .footer {
+            background-color: #003366;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            margin-top: 40px;
+            width: 100%;
+        }
+        
+        /* Test content styles */
+        .test-container {
+            display: none;
+            padding: 20px;
+        }
+        
+        .test-container h2 {
+            margin-bottom: 20px;
+            color: #003366;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 10px;
+        }
+        
+        .test-container p {
+            margin-bottom: 15px;
+        }
+        
+        .back-button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .back-button:hover {
+            background-color: #002244;
+        }
+        
+        .question {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border-left: 5px solid #003366;
+        }
+        
+        .form-field {
+            margin-bottom: 20px;
+        }
+        
+        .form-field label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-field input,
+        .form-field textarea,
+        .form-field select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .submit-btn {
+            background-color: #004488;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #003366;
+        }
+        
+        .version-info {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 11px;
+            color: #777;
+        }
+        
+        /* Login modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            width: 400px;
+            max-width: 90%;
+        }
+        
+        .modal h3 {
+            margin-bottom: 20px;
+            color: #003366;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 10px;
+        }
+        
+        .credential-input {
+            margin-bottom: 15px;
+        }
+        
+        .error-message {
+            color: #cc0000;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .login-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .login-buttons button {
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .login-btn {
+            background-color: #004488;
+            color: white;
+            border: none;
+        }
+        
+        .login-btn:hover {
+            background-color: #003366;
+        }
+        
+        .cancel-btn {
+            background-color: #dddddd;
+            color: #333333;
+            border: 1px solid #cccccc;
+        }
+        
+        .cancel-btn:hover {
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>ODBIT SubDiv Testing</h1>
+    </div>
+    
+    <div class="main-container">
+        <div class="mission-statement">
+            <strong>ODBIT Mission:</strong> ODBIT (Online Dater Banning and Investigation Team) is dedicated to stopping ROBLOX Online Daters and preventing Online Sexual Assault or Abuse. Our investigation specialists work to identify, report, and remove individuals who engage in inappropriate behavior on the ROBLOX platform to ensure a safe gaming environment for all users.
+        </div>
+        
+        <div id="main-menu" class="buttons-container">
+            <div class="button disabled">
+                <div class="button-icon">🗳️</div>
+                ODBIT Election
+            </div>
+            <div class="button" id="basic-training">
+                <div class="button-icon">📚</div>
+                ODBIT Basic Training
+            </div>
+            <div class="button disabled">
+                <div class="button-icon">📊</div>
+                ODBIT Online Benchmark
+            </div>
+            <div class="button" id="apply-election">
+                <div class="button-icon">📝</div>
+                ODBIT Apply for Election
+            </div>
+        </div>
+        
+        <div id="basic-training-test" class="test-container">
+            <h2>ODBIT Basic Training Assessment</h2>
+            <p>Welcome to the ODBIT Basic Training module. Please complete the following questions to demonstrate your understanding of ODBIT procedures.</p>
+            
+            <div class="question">
+                <p><strong>Question 1:</strong> What is the primary mission of ODBIT?</p>
+                <form>
+                    <input type="radio" id="q1a" name="q1"> <label for="q1a">To organize ROBLOX game events</label><br>
+                    <input type="radio" id="q1b" name="q1"> <label for="q1b">To develop new ROBLOX games</label><br>
+                    <input type="radio" id="q1c" name="q1"> <label for="q1c">To stop Online Dating and prevent Sexual Assault/Abuse on ROBLOX</label><br>
+                    <input type="radio" id="q1d" name="q1"> <label for="q1d">To provide technical support for ROBLOX users</label><br>
+                </form>
+            </div>
+            
+            <div class="question">
+                <p><strong>Question 2:</strong> How should an ODBIT member respond when identifying potential Online Dating activity?</p>
+                <form>
+                    <input type="radio" id="q2a" name="q2"> <label for="q2a">Ignore it as it's not harmful</label><br>
+                    <input type="radio" id="q2b" name="q2"> <label for="q2b">Document evidence and report through proper channels</label><br>
+                    <input type="radio" id="q2c" name="q2"> <label for="q2c">Confront the users directly</label><br>
+                    <input type="radio" id="q2d" name="q2"> <label for="q2d">Join in the conversation to gather more information</label><br>
+                </form>
+            </div>
+            
+            <div class="question">
+                <p><strong>Question 3:</strong> What is a SpecID used for in ODBIT operations?</p>
+                <form>
+                    <input type="radio" id="q3a" name="q3"> <label for="q3a">To identify specific ROBLOX games</label><br>
+                    <input type="radio" id="q3b" name="q3"> <label for="q3b">To uniquely identify ODBIT members and verify their credentials</label><br>
+                    <input type="radio" id="q3c" name="q3"> <label for="q3c">To categorize different types of violations</label><br>
+                    <input type="radio" id="q3d" name="q3"> <label for="q3d">To track the number of reports filed</label><br>
+                </form>
+            </div>
+
+                        <div class="question">
+                <p><strong>Question 4:</strong> What is the appropriate way of proofing your case?</p>
+                <form>
+                    <input type="radio" id="q2a" name="q2"> <label for="q2a">1 Screenshot of Chat Logs</label><br>
+                    <input type="radio" id="q2b" name="q2"> <label for="q2b">3 Screenshots of Chat Logs and Character Info</label><br>
+                    <input type="radio" id="q2c" name="q2"> <label for="q2c">Screen Recording Using an Approved Recorder</label><br>
+                    <input type="radio" id="q2d" name="q2"> <label for="q2d">Have 3 or More Witnesses</label><br>
+                </form>
+            </div>
+
+                        <div class="question">
+                <p><strong>Question 5:</strong> How should you approach an online dater?</p>
+                <form>
+                    <input type="radio" id="q2a" name="q2"> <label for="q2a">Approach in a Careless Tone</label><br>
+                    <input type="radio" id="q2b" name="q2"> <label for="q2b">Approach in a Rude Tone</label><br>
+                    <input type="radio" id="q2c" name="q2"> <label for="q2c">Approach in a Stern Tone</label><br>
+                    <input type="radio" id="q2d" name="q2"> <label for="q2d">Approach in a Friendly Tone</label><br>
+                </form>
+            </div>
+
+<div class="question">
+    <p><strong>Question 6:</strong> What would you do when met in sight with a 
+        <a href="https://www.merriam-webster.com/dictionary/pedophilia" target="_blank" rel="noopener noreferrer">
+            pedophile
+        </a>?
+    </p>
+    <form>
+        <label for="q6a">Enter your response...</label>
+        <input type="text" id="q6a" name="q6a"><br>
+    </form>
+</div>
+
+            
+            <button class="submit-btn">Submit Answers</button>
+            <button class="back-button">Back to Main Menu</button>
+        </div>
+        
+        <div id="apply-election-test" class="test-container">
+            <h2>ODBIT Election Application</h2>
+            <p>Thank you for your interest in becoming the President/CEO of ODBIT. Please complete the following application form.</p>
+            
+            <div class="form-field">
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-field">
+                <label for="spec-id-display">Your SpecID:</label>
+                <input type="text" id="spec-id-display" disabled>
+            </div>
+            
+            <div class="form-field">
+                <label for="roblox-username">ROBLOX Username:</label>
+                <input type="text" id="roblox-username" placeholder="Enter your ROBLOX username">
+            </div>
+            
+            <div class="form-field">
+                <label for="position">Position Applying For:</label>
+                <select id="position" disabled>
+                    <option value="president">ODBIT President/CEO</option>
+                </select>
+            </div>
+            
+            <div class="form-field">
+                <label for="experience">Relevant Experience:</label>
+                <textarea id="experience" rows="4" placeholder="Describe your experience with ODBIT operations and leadership roles..."></textarea>
+            </div>
+            
+            <div class="form-field">
+                <label for="platform">Election Platform:</label>
+                <textarea id="platform" rows="6" placeholder="Describe your vision for ODBIT and how you plan to enhance its mission to combat Online Dating and abuse on ROBLOX..."></textarea>
+            </div>
+            
+            <button class="submit-btn">Submit Application</button>
+            <button class="back-button">Back to Main Menu</button>
+        </div>
+        
+        <div class="version-info">ODBIT SubDiv Testing v2.8.14 | © 2014-2025</div>
+    </div>
+    
+    <div class="footer">
+        ODBIT SubDiv Testing System | Unauthorized access prohibited | Technical support: contact@odbit.org
+    </div>
+    
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h3>Authentication Required</h3>
+            <p>Please enter your ODBIT SpecID and PIN to continue.</p>
+            
+            <div class="credential-input">
+                <label for="spec-id">SpecID:</label>
+                <input type="text" id="spec-id" placeholder="Enter your SpecID">
+            </div>
+            
+            <div class="credential-input">
+                <label for="pin">PIN:</label>
+                <input type="password" id="pin" placeholder="Enter your PIN">
+            </div>
+            
+            <div id="error-message" class="error-message">
+                Invalid SpecID or PIN. Please try again.
+            </div>
+            
+            <div class="login-buttons">
+                <button id="login-submit" class="login-btn">Login</button>
+                <button id="login-cancel" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainMenu = document.getElementById('main-menu');
+            const basicTrainingTest = document.getElementById('basic-training-test');
+            const applyElectionTest = document.getElementById('apply-election-test');
+            const loginModal = document.getElementById('login-modal');
+            const errorMessage = document.getElementById('error-message');
+            
+            // Valid credentials
+            const validCredentials = [
+                {
+                    "spec_id": "495739672935",
+                    "pin": "6882"
+                },
+                {
+                    "spec_id": "495629572819",
+                    "pin": "1396"
+                },
+                {
+                    "spec_id": "495838492486",
+                    "pin": "19938"
+                },
+                {
+                    "spec_id": "4925537503891",
+                    "pin": "13395"
+                }
+            ];
+            
+            // Track current action to handle after login
+            let currentAction = '';
+            let currentSpecId = '';
+            
+            document.getElementById('basic-training').addEventListener('click', function() {
+                currentAction = 'basic-training';
+                showLoginModal();
+            });
+            
+            document.getElementById('apply-election').addEventListener('click', function() {
+                currentAction = 'apply-election';
+                showLoginModal();
+            });
+            
+            function showLoginModal() {
+                loginModal.style.display = 'flex';
+                document.getElementById('spec-id').value = '';
+                document.getElementById('pin').value = '';
+                errorMessage.style.display = 'none';
+            }
+            
+            document.getElementById('login-submit').addEventListener('click', function() {
+                const specId = document.getElementById('spec-id').value;
+                const pin = document.getElementById('pin').value;
+                
+                // Validate credentials
+                const validCredential = validCredentials.find(cred => 
+                    cred.spec_id === specId && cred.pin === pin
+                );
+                
+                if (validCredential) {
+                    currentSpecId = specId;
+                    loginModal.style.display = 'none';
+                    
+                    if (currentAction === 'basic-training') {
+                        mainMenu.style.display = 'none';
+                        basicTrainingTest.style.display = 'block';
+                    } else if (currentAction === 'apply-election') {
+                        mainMenu.style.display = 'none';
+                        document.getElementById('spec-id-display').value = specId;
+                        applyElectionTest.style.display = 'block';
+                    }
+                } else {
+                    errorMessage.style.display = 'block';
+                }
+            });
+            
+            document.getElementById('login-cancel').addEventListener('click', function() {
+                loginModal.style.display = 'none';
+            });
+            
+            const backButtons = document.querySelectorAll('.back-button');
+            backButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    basicTrainingTest.style.display = 'none';
+                    applyElectionTest.style.display = 'none';
+                    mainMenu.style.display = 'grid';
+                });
+            });
+            
+            const submitButtons = document.querySelectorAll('.submit-btn');
+            submitButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    alert('Thank you for your submission. Your information has been recorded.');
+                    basicTrainingTest.style.display = 'none';
+                    applyElectionTest.style.display = 'none';
+                    mainMenu.style.display = 'grid';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
