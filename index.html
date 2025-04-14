@@ -279,7 +279,7 @@
     
     <div class="main-container">
         <div class="mission-statement">
-            <strong>ODBIT Mission:</strong> ODBIT (Online Dater Banning and Investigation Team) is dedicated to stopping ROBLOX Online Daters and preventing Online Sexual Assault or Abuse. Our investigation specialists work to identify, report, and remove individuals who engage in inappropriate behavior on the ROBLOX platform to ensure a safe gaming environment for all users.
+            <strong>ODBIT SubDiv Portal:</strong> ODBIT had made an online testing service for all ODBIT staff. This is required to be taking place every few months, mostly every 5 months.
         </div>
         
         <div id="main-menu" class="buttons-container">
@@ -291,7 +291,7 @@
                 <div class="button-icon">📚</div>
                 ODBIT Basic Training
             </div>
-            <div class="button disabled">
+            <div class="button" id="online-benchmark">
                 <div class="button-icon">📊</div>
                 ODBIT Online Benchmark
             </div>
@@ -305,7 +305,7 @@
             <h2>ODBIT Basic Training Assessment</h2>
             <p>Welcome to the ODBIT Basic Training module. Please complete the following questions to demonstrate your understanding of ODBIT procedures.</p>
             
-<div class="question">
+            <div class="question">
     <p><strong>Question 1:</strong> What does ODBIT stand for?</p>
     <form>
         <input type="radio" id="q1a" name="q1"> <label for="q1a">Online Dater Bureau of Investigation Team</label><br>
@@ -709,9 +709,421 @@
     </form>
 </div>
 
-
             
             <button class="submit-btn">Submit Answers</button>
+            <button class="back-button">Back to Main Menu</button>
+        </div>
+        
+        <div id="online-benchmark-test" class="test-container">
+            <h2>ODBIT Online Benchmark</h2>
+            <p>Welcome to the ODBIT Online Benchmark assessment. This evaluation will measure your understanding of ODBIT protocols and procedures.</p>
+            
+            <div class="question">
+    <p><strong>Question 1:</strong> What does ODBIT stand for?</p>
+    <form>
+        <input type="radio" id="q1a" name="q1"> <label for="q1a">Online Dater Bureau of Investigation Team</label><br>
+        <input type="radio" id="q1b" name="q1"> <label for="q1b">Online Detection Bureau of Internet Technology</label><br>
+        <input type="radio" id="q1c" name="q1"> <label for="q1c">Online Dater Bureau of Internet Team</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 2:</strong> What is ODBIT's main mission?</p>
+    <form>
+        <input type="radio" id="q2a" name="q2"> <label for="q2a">Prevent online daters</label><br>
+        <input type="radio" id="q2b" name="q2"> <label for="q2b">Enforce ROBLOX TOS and prevent online dating</label><br>
+        <input type="radio" id="q2c" name="q2"> <label for="q2c">Ban players from ROBLOX</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 3:</strong> What should ODBIT do before reporting an online dater?</p>
+    <form>
+        <input type="radio" id="q3a" name="q3"> <label for="q3a">Investigate thoroughly</label><br>
+        <input type="radio" id="q3b" name="q3"> <label for="q3b">Send a warning</label><br>
+        <input type="radio" id="q3c" name="q3"> <label for="q3c">Immediately ban the player</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 4:</strong> What is the consequence for false reporting in ODBIT?</p>
+    <form>
+        <input type="radio" id="q4a" name="q4"> <label for="q4a">Fine</label><br>
+        <input type="radio" id="q4b" name="q4"> <label for="q4b">Warning</label><br>
+        <input type="radio" id="q4c" name="q4"> <label for="q4c">Exile</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 5:</strong> What tool does ODBIT use for staff involvement in investigations?</p>
+    <form>
+        <input type="radio" id="q5a" name="q5"> <label for="q5a">OBS Studio</label><br>
+        <input type="radio" id="q5b" name="q5"> <label for="q5b">Zoom</label><br>
+        <input type="radio" id="q5c" name="q5"> <label for="q5c">Discord</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 6:</strong> How does ODBIT ensure the privacy of individuals being investigated?</p>
+    <form>
+        <input type="radio" id="q6a" name="q6"> <label for="q6a">By using aliases</label><br>
+        <input type="radio" id="q6b" name="q6"> <label for="q6b">By preventing doxxing</label><br>
+        <input type="radio" id="q6c" name="q6"> <label for="q6c">By masking all usernames</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 7:</strong> What does the "alpha" role represent in ODBIT?</p>
+    <form>
+        <input type="radio" id="q7a" name="q7"> <label for="q7a">A dominant role in investigations</label><br>
+        <input type="radio" id="q7b" name="q7"> <label for="q7b">The team leader</label><br>
+        <input type="radio" id="q7c" name="q7"> <label for="q7c">The most experienced member</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 8:</strong> How does ODBIT handle an online dater who has been caught?</p>
+    <form>
+        <input type="radio" id="q8a" name="q8"> <label for="q8a">They are banned from ROBLOX immediately</label><br>
+        <input type="radio" id="q8b" name="q8"> <label for="q8b">They are given a warning</label><br>
+        <input type="radio" id="q8c" name="q8"> <label for="q8c">They are investigated and the result is documented</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 9:</strong> How should ODBIT report an online dater who is caught?</p>
+    <form>
+        <input type="radio" id="q9a" name="q9"> <label for="q9a">By issuing a warning</label><br>
+        <input type="radio" id="q9b" name="q9"> <label for="q9b">By submitting evidence to moderators</label><br>
+        <input type="radio" id="q9c" name="q9"> <label for="q9c">By reporting directly to ROBLOX support</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 10:</strong> What should ODBIT do when investigating a suspected online dater?</p>
+    <form>
+        <input type="radio" id="q10a" name="q10"> <label for="q10a">Monitor their interactions and gather evidence</label><br>
+        <input type="radio" id="q10b" name="q10"> <label for="q10b">Ban them immediately</label><br>
+        <input type="radio" id="q10c" name="q10"> <label for="q10c">Warn the player without investigation</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 11:</strong> How does ODBIT avoid false reports?</p>
+    <form>
+        <input type="radio" id="q11a" name="q11"> <label for="q11a">By investigating thoroughly</label><br>
+        <input type="radio" id="q11b" name="q11"> <label for="q11b">By trusting all reports automatically</label><br>
+        <input type="radio" id="q11c" name="q11"> <label for="q11c">By ignoring suspicious reports</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 12:</strong> What are the potential consequences for false reporting?</p>
+    <form>
+        <input type="radio" id="q12a" name="q12"> <label for="q12a">Reprimands or fines</label><br>
+        <input type="radio" id="q12b" name="q12"> <label for="q12b">Exile from ODBIT</label><br>
+        <input type="radio" id="q12c" name="q12"> <label for="q12c">Nothing</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 13:</strong> How should ODBIT handle personal information of players?</p>
+    <form>
+        <input type="radio" id="q13a" name="q13"> <label for="q13a">Protect personal information at all costs</label><br>
+        <input type="radio" id="q13b" name="q13"> <label for="q13b">Share personal info freely for transparency</label><br>
+        <input type="radio" id="q13c" name="q13"> <label for="q13c">Ignore personal information entirely</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 14:</strong> How does ODBIT maintain professionalism during investigations?</p>
+    <form>
+        <input type="radio" id="q14a" name="q14"> <label for="q14a">By following ROBLOX's terms of service</label><br>
+        <input type="radio" id="q14b" name="q14"> <label for="q14b">By being aggressive in investigations</label><br>
+        <input type="radio" id="q14c" name="q14"> <label for="q14c">By working alone</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 15:</strong> What is the primary tool used by ODBIT for capturing evidence?</p>
+    <form>
+        <input type="radio" id="q15a" name="q15"> <label for="q15a">OBS Studio</label><br>
+        <input type="radio" id="q15b" name="q15"> <label for="q15b">Roblox Studio</label><br>
+        <input type="radio" id="q15c" name="q15"> <label for="q15c">Discord Bots</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 16:</strong> What role does ODBIT play within the ROBLOX community?</p>
+    <form>
+        <input type="radio" id="q16a" name="q16"> <label for="q16a">Investigating and preventing online dating</label><br>
+        <input type="radio" id="q16b" name="q16"> <label for="q16b">Developing games</label><br>
+        <input type="radio" id="q16c" name="q16"> <label for="q16c">Promoting ROBLOX rules</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 17:</strong> What does ODBIT aim to stop on the ROBLOX platform?</p>
+    <form>
+        <input type="radio" id="q17a" name="q17"> <label for="q17a">Inappropriate dating behaviors</label><br>
+        <input type="radio" id="q17b" name="q17"> <label for="q17b">Game exploits</label><br>
+        <input type="radio" id="q17c" name="q17"> <label for="q17c">Account theft</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 18:</strong> What happens if someone is falsely accused by ODBIT?</p>
+    <form>
+        <input type="radio" id="q18a" name="q18"> <label for="q18a">They may receive a fine or exile</label><br>
+        <input type="radio" id="q18b" name="q18"> <label for="q18b">They are given a warning</label><br>
+        <input type="radio" id="q18c" name="q18"> <label for="q18c">Nothing happens to them</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 19:</strong> How does ODBIT ensure fairness in investigations?</p>
+    <form>
+        <input type="radio" id="q19a" name="q19"> <label for="q19a">By reviewing evidence thoroughly</label><br>
+        <input type="radio" id="q19b" name="q19"> <label for="q19b">By ignoring evidence from third parties</label><br>
+        <input type="radio" id="q19c" name="q19"> <label for="q19c">By rushing investigations</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 20:</strong> What is one of ODBIT's most important policies?</p>
+    <form>
+        <input type="radio" id="q20a" name="q20"> <label for="q20a">Privacy of users involved in investigations</label><br>
+        <input type="radio" id="q20b" name="q20"> <label for="q20b">Making public all reports</label><br>
+        <input type="radio" id="q20c" name="q20"> <label for="q20c">Allowing staff to participate in investigations of their own accounts</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 21:</strong> How does ODBIT report violations to ROBLOX?</p>
+    <form>
+        <input type="radio" id="q21a" name="q21"> <label for="q21a">By submitting evidence to the moderation team</label><br>
+        <input type="radio" id="q21b" name="q21"> <label for="q21b">By contacting ROBLOX admins directly</label><br>
+        <input type="radio" id="q21c" name="q21"> <label for="q21c">By posting publicly about the issue</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 22:</strong> How often should ODBIT perform investigations?</p>
+    <form>
+        <input type="radio" id="q22a" name="q22"> <label for="q22a">As needed, based on reports</label><br>
+        <input type="radio" id="q22b" name="q22"> <label for="q22b">Daily</label><br>
+        <input type="radio" id="q22c" name="q22"> <label for="q22c">Only when requested by ROBLOX</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 23:</strong> What is the proper response to encountering an online dater on ROBLOX?</p>
+    <form>
+        <input type="radio" id="q23a" name="q23"> <label for="q23a">Report them to ODBIT</label><br>
+        <input type="radio" id="q23b" name="q23"> <label for="q23b">Ignore them</label><br>
+        <input type="radio" id="q23c" name="q23"> <label for="q23c">Start dating them</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 24:</strong> What should you do if you think you have encountered a false report in ODBIT?</p>
+    <form>
+        <input type="radio" id="q24a" name="q24"> <label for="q24a">Contact ODBIT to clarify</label><br>
+        <input type="radio" id="q24b" name="q24"> <label for="q24b">Ignore it and move on</label><br>
+        <input type="radio" id="q24c" name="q24"> <label for="q24c">Report the person who made the false claim</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 25:</strong> How does ODBIT investigate online dating?</p>
+    <form>
+        <input type="radio" id="q25a" name="q25"> <label for="q25a">By collecting evidence from chats and gameplay</label><br>
+        <input type="radio" id="q25b" name="q25"> <label for="q25b">By assuming everyone is guilty</label><br>
+        <input type="radio" id="q25c" name="q25"> <label for="q25c">By asking players for personal information</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 26:</strong> What is an important characteristic of an ODBIT investigator?</p>
+    <form>
+        <input type="radio" id="q26a" name="q26"> <label for="q26a">Attention to detail and patience</label><br>
+        <input type="radio" id="q26b" name="q26"> <label for="q26b">Speed and efficiency</label><br>
+        <input type="radio" id="q26c" name="q26"> <label for="q26c">Strict rules enforcement without investigation</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 27:</strong> What happens if ODBIT catches a repeat offender?</p>
+    <form>
+        <input type="radio" id="q27a" name="q27"> <label for="q27a">They face increased penalties</label><br>
+        <input type="radio" id="q27b" name="q27"> <label for="q27b">They are forgiven</label><br>
+        <input type="radio" id="q27c" name="q27"> <label for="q27c">They are banned from the community permanently</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 28:</strong> What must an ODBIT investigator do when they find sufficient evidence?</p>
+    <form>
+        <input type="radio" id="q28a" name="q28"> <label for="q28a">Submit the evidence to ODBIT leadership</label><br>
+        <input type="radio" id="q28b" name="q28"> <label for="q28b">Report directly to ROBLOX</label><br>
+        <input type="radio" id="q28c" name="q28"> <label for="q28c">Proceed with an immediate ban</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 29:</strong> What should you never do during an ODBIT investigation?</p>
+    <form>
+        <input type="radio" id="q29a" name="q29"> <label for="q29a">Doxx any individual involved</label><br>
+        <input type="radio" id="q29b" name="q29"> <label for="q29b">Ignore the rules of ROBLOX</label><br>
+        <input type="radio" id="q29c" name="q29"> <label for="q29c">Rush to conclusions without evidence</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 30:</strong> What is the consequence of releasing confidential information during an investigation?</p>
+    <form>
+        <input type="radio" id="q30a" name="q30"> <label for="q30a">Exile from ODBIT</label><br>
+        <input type="radio" id="q30b" name="q30"> <label for="q30b">Immediate warning</label><br>
+        <input type="radio" id="q30c" name="q30"> <label for="q30c">No consequence</label><br>
+    </form>
+</div>
+<div class="question">
+    <p><strong>Question 31:</strong> What is the first step an ODBIT investigator should take when receiving a report?</p>
+    <form>
+        <input type="radio" id="q31a" name="q31"> <label for="q31a">Verify the report's credibility</label><br>
+        <input type="radio" id="q31b" name="q31"> <label for="q31b">Immediately report the user to ROBLOX</label><br>
+        <input type="radio" id="q31c" name="q31"> <label for="q31c">Ignore the report and move on</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 32:</strong> What should be included when reporting an online dater to ODBIT?</p>
+    <form>
+        <input type="radio" id="q32a" name="q32"> <label for="q32a">Evidence, such as chat logs and screenshots</label><br>
+        <input type="radio" id="q32b" name="q32"> <label for="q32b">Just the name of the user</label><br>
+        <input type="radio" id="q32c" name="q32"> <label for="q32c">Only the date and time of the encounter</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 33:</strong> What is the primary goal of ODBIT investigations?</p>
+    <form>
+        <input type="radio" id="q33a" name="q33"> <label for="q33a">To enforce ROBLOX's Terms of Service regarding online dating</label><br>
+        <input type="radio" id="q33b" name="q33"> <label for="q33b">To create public reports about users</label><br>
+        <input type="radio" id="q33c" name="q33"> <label for="q33c">To monitor all ROBLOX users</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 34:</strong> How can ODBIT prevent online dating behaviors?</p>
+    <form>
+        <input type="radio" id="q34a" name="q34"> <label for="q34a">By investigating reports and enforcing consequences</label><br>
+        <input type="radio" id="q34b" name="q34"> <label for="q34b">By banning all users under the age of 18</label><br>
+        <input type="radio" id="q34c" name="q34"> <label for="q34c">By monitoring players' friends lists</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 35:</strong> What should be avoided when collecting evidence for an ODBIT investigation?</p>
+    <form>
+        <input type="radio" id="q35a" name="q35"> <label for="q35a">Tampering with chat logs or screenshots</label><br>
+        <input type="radio" id="q35b" name="q35"> <label for="q35b">Asking for personal information from the accused</label><br>
+        <input type="radio" id="q35c" name="q35"> <label for="q35c">Sharing evidence with unrelated parties</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 36:</strong> How should ODBIT investigators handle a user who denies allegations?</p>
+    <form>
+        <input type="radio" id="q36a" name="q36"> <label for="q36a">They should review the evidence carefully and fairly</label><br>
+        <input type="radio" id="q36b" name="q36"> <label for="q36b">They should accuse the user of lying</label><br>
+        <input type="radio" id="q36c" name="q36"> <label for="q36c">They should ignore the user's denial</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 37:</strong> What type of behavior is ODBIT primarily concerned with preventing on ROBLOX?</p>
+    <form>
+        <input type="radio" id="q37a" name="q37"> <label for="q37a">Online dating and inappropriate relationships</label><br>
+        <input type="radio" id="q37b" name="q37"> <label for="q37b">Game exploits and hacks</label><br>
+        <input type="radio" id="q37c" name="q37"> <label for="q37c">Cheating in games</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 38:</strong> What action should be taken if an ODBIT investigation reveals that a report was fabricated?</p>
+    <form>
+        <input type="radio" id="q38a" name="q38"> <label for="q38a">The person who filed the false report may face penalties</label><br>
+        <input type="radio" id="q38b" name="q38"> <label for="q38b">The investigation is considered null and void</label><br>
+        <input type="radio" id="q38c" name="q38"> <label for="q38c">The fabricated report is ignored</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 39:</strong> What is one potential consequence of being found guilty of online dating on ROBLOX?</p>
+    <form>
+        <input type="radio" id="q39a" name="q39"> <label for="q39a">Account ban or exile</label><br>
+        <input type="radio" id="q39b" name="q39"> <label for="q39b">Loss of friends</label><br>
+        <input type="radio" id="q39c" name="q39"> <label for="q39c">No consequence</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 40:</strong> What should ODBIT investigators do when they receive a complaint about online dating from a player?</p>
+    <form>
+        <input type="radio" id="q40a" name="q40"> <label for="q40a">Follow the standard investigation procedures</label><br>
+        <input type="radio" id="q40b" name="q40"> <label for="q40b">Ignore it unless the complaint is about a VIP user</label><br>
+        <input type="radio" id="q40c" name="q40"> <label for="q40c">Contact the player directly without conducting an investigation</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 41:</strong> What is ODBIT's stance on doxxing during an investigation?</p>
+    <form>
+        <input type="radio" id="q41a" name="q41"> <label for="q41a">It is strictly prohibited</label><br>
+        <input type="radio" id="q41b" name="q41"> <label for="q41b">It is allowed if it's part of the investigation</label><br>
+        <input type="radio" id="q41c" name="q41"> <label for="q41c">It is acceptable to doxx if the person is guilty</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 42:</strong> What should ODBIT staff do if they encounter conflicting evidence during an investigation?</p>
+    <form>
+        <input type="radio" id="q42a" name="q42"> <label for="q42a">Carefully analyze all evidence before making a decision</label><br>
+        <input type="radio" id="q42b" name="q42"> <label for="q42b">Make a decision based on the majority of evidence</label><br>
+        <input type="radio" id="q42c" name="q42"> <label for="q42c">Ignore the conflicting evidence</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 43:</strong> What is an example of a false report in ODBIT?</p>
+    <form>
+        <input type="radio" id="q43a" name="q43"> <label for="q43a">Reporting someone for online dating without any evidence</label><br>
+        <input type="radio" id="q43b" name="q43"> <label for="q43b">Reporting someone for swearing in chat</label><br>
+        <input type="radio" id="q43c" name="q43"> <label for="q43c">Reporting a user for inappropriate content in their game</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 44:</strong> What is the correct way to report a violation to ODBIT?</p>
+    <form>
+        <input type="radio" id="q44a" name="q44"> <label for="q44a">Using the ODBIT reporting form with sufficient evidence</label><br>
+        <input type="radio" id="q44b" name="q44"> <label for="q44b">Directly messaging an ODBIT investigator</label><br>
+        <input type="radio" id="q44c" name="q44"> <label for="q44c">Posting about the violation publicly</label><br>
+    </form>
+</div>
+
+<div class="question">
+    <p><strong>Question 45:</strong> What should you do if you witness online dating behavior on ROBLOX?</p>
+    <form>
+        <input type="radio" id="q45a" name="q45"> <label for="q45a">Report it to ODBIT with evidence</label><br>
+        <input type="radio" id="q45b" name="q45"> <label for="q45b">Ignore it</label><br>
+        <input type="radio" id="q45c" name="q45"> <label for="q45c">Join in the behavior</label><br>
+    </form>
+</div>
+
+            
+            <button class="submit-btn">Submit Benchmark</button>
             <button class="back-button">Back to Main Menu</button>
         </div>
         
@@ -793,6 +1205,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const mainMenu = document.getElementById('main-menu');
             const basicTrainingTest = document.getElementById('basic-training-test');
+            const onlineBenchmarkTest = document.getElementById('online-benchmark-test');
             const applyElectionTest = document.getElementById('apply-election-test');
             const loginModal = document.getElementById('login-modal');
             const errorMessage = document.getElementById('error-message');
@@ -826,6 +1239,11 @@
                 showLoginModal();
             });
             
+            document.getElementById('online-benchmark').addEventListener('click', function() {
+                currentAction = 'online-benchmark';
+                showLoginModal();
+            });
+            
             document.getElementById('apply-election').addEventListener('click', function() {
                 currentAction = 'apply-election';
                 showLoginModal();
@@ -854,6 +1272,9 @@
                     if (currentAction === 'basic-training') {
                         mainMenu.style.display = 'none';
                         basicTrainingTest.style.display = 'block';
+                    } else if (currentAction === 'online-benchmark') {
+                        mainMenu.style.display = 'none';
+                        onlineBenchmarkTest.style.display = 'block';
                     } else if (currentAction === 'apply-election') {
                         mainMenu.style.display = 'none';
                         document.getElementById('spec-id-display').value = specId;
@@ -872,6 +1293,7 @@
             backButtons.forEach(function(button) {
                 button.addEventListener('click', function() {
                     basicTrainingTest.style.display = 'none';
+                    onlineBenchmarkTest.style.display = 'none';
                     applyElectionTest.style.display = 'none';
                     mainMenu.style.display = 'grid';
                 });
@@ -882,6 +1304,7 @@
                 button.addEventListener('click', function() {
                     alert('Thank you for your submission. Your information has been recorded.');
                     basicTrainingTest.style.display = 'none';
+                    onlineBenchmarkTest.style.display = 'none';
                     applyElectionTest.style.display = 'none';
                     mainMenu.style.display = 'grid';
                 });
@@ -891,4 +1314,3 @@
     </script>
 </body>
 </html>
-
